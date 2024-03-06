@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="cart-container">
+    <h2 class="text-white">Carrito de Compras</h2>
+    <div *ngIf="productosEnCarrito.length === 0" class="empty-cart-message">
+        <p class="text-white">No hay productos en el carrito.</p>
+    </div>
+    <div *ngIf="productosEnCarrito.length > 0" class="cart-items">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of productosEnCarrito">
+                        <td><img [src]="item.producto.imagen_url" alt="{{ item.producto.nombre }}" class="cart-item-image"></td>
+                        <td>{{ item.producto.nombre }}</td>
+                        <td>{{ item.producto.descripcion }}</td>
+                        <td>${{ item.producto.precio }}</td>
+                        <td>{{ item.cantidad }}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="eliminarDelCarrito(item.producto)">
+                                <i class="fas fa-trash"></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cart-total">
+            <h3 class="text-white">Total: ${{ calcularTotal() }}</h3>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="realizarVenta()">Procesar Venta</button>
+    </div>
+</div>

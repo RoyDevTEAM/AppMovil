@@ -1,0 +1,72 @@
+/* Estilos para el carrito de compras */
+.cart-container {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.cart-container h2 {
+  color: white;
+}
+
+.cart-items {
+  margin-top: 20px;
+}
+
+.cart-items table {
+  width: 100%;
+}
+
+.cart-items table th,
+.cart-items table td {
+  vertical-align: middle !important;
+}
+
+.cart-item-image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.cart-total {
+  margin-top: 20px;
+}
+
+/* Estilos para botón de procesar venta */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Estilos para botón de eliminar */
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* Estilos para mensaje de carrito vacío */
+.empty-cart-message {
+  color: white;
+  margin-top: 20px;
+}
+
+/* Efecto de hover sobre filas de la tabla */
+.table-dark tbody tr:hover {
+  background-color: #cceeff;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto de hover sobre icono de eliminar */
+.btn-danger:hover .fas {
+  color: #fff;
+}
